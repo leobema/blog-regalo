@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
+const links = [{
+  label: 'Home',
+  route: '/'
+}, {
+  label: 'About',
+  route: '/about'
+}]
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,12 +27,13 @@ export default function RootLayout({
       <body className={inter.className}>
         <nav>
           <ul>
-          <li>
-              Menu 1
-          </li>
-          <li>
-              Menu 2
-          </li>
+          {links.map(({label, route}) => (
+            <li key={route}>
+              <Link href={route}>
+                {label}
+              </Link>
+            </li>
+          ))}
           </ul>
         </nav>
         {children}
