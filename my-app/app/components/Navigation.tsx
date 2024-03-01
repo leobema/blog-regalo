@@ -16,10 +16,11 @@ const links = [{
 
 export function Navigation () {
     return (
-        <nav >
-          <ul className="flex flex-auto gap-8 items-center border">
+      <main className="p-5 justify-items-center mx-20">
+        <nav>
+          <ul className="flex flex-auto gap-8 border">
           {links.map(({label, route}) => (
-            <li key={route} >
+            <li key={route} className="ml-4">
               <Link href={route}>
                 {label}
               </Link>
@@ -27,4 +28,5 @@ export function Navigation () {
           ))}
           </ul>
         </nav>
+        </main>
 )}
