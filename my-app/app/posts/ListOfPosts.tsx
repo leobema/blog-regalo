@@ -14,7 +14,7 @@ const fetchPosts = () => {
     const posts = await fetchPosts()
 
   
-      return posts.slice(0, 5).map(post => (
+      return posts.slice(0, 5).map((post: any) => (
             <article key={post.id}>
               <Link href='/posts/[id]' as={`/posts/${post.id}`}> 
               <h2 className="text-xl font-bold">{post.title}</h2>
