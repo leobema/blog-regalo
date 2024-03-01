@@ -13,9 +13,9 @@ export default async function Post({ params }) {
     const comments = await fetchComments(id)
 
     return (
-        <ul>
+        <ul className=" bg-slate-200 mt-2">
             {comments.map(comment => (
-            <li key={comment.id} className=" p-2">
+            <li key={comment.id} className=" p-4">
                 <h2 className=" font-bold">{comment.name}</h2>
                 <p>{comment.body}</p>
             </li>
