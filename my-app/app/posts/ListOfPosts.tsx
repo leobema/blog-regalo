@@ -19,8 +19,9 @@ const fetchPosts = () => {
               <Link href='/posts/[id]' as={`/posts/${post.id}`}> 
               <h2 className="text-xl font-bold">{post.title}</h2>
               <p>{post.body}</p>
-                <LikeButton id={post.id} />
+                
               </Link>
+              <LikeButton id={post.id} />
             </article>
           ))
         }
